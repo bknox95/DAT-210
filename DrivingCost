@@ -1,0 +1,41 @@
+/*Driving is expensive. Write a program with a car's miles/gallon and gas dollars/gallon (both doubles) as input, and output the gas cost for 20 miles, 75 miles, and 500 miles.
+
+        Output each floating-point value with two digits after the decimal point, which can be achieved as follows:
+        System.out.printf("%.2f", yourValue);
+
+        The output ends with a newline.
+
+        Ex: If the input is:
+
+        20.0 3.1599
+        the output is:
+
+        3.16 11.85 79.00
+        Note: Real per-mile cost would also include maintenance and depreciation. */
+import java.util.Scanner;
+
+public class LabProgram {
+
+    public static void main(String[] args) {
+
+        Scanner scnr = new Scanner(System.in);
+
+        double milesPerGallon;
+        double dollarsPerGallon;
+        double cost;
+
+        milesPerGallon = scnr.nextDouble();
+        dollarsPerGallon = scnr.nextDouble();
+
+        cost = (20 / milesPerGallon) * dollarsPerGallon;
+        System.out.printf("%.2f", cost);
+
+        cost = (75 / milesPerGallon) * dollarsPerGallon;
+        System.out.printf(" %.2f", cost);
+
+        cost = (500 / milesPerGallon) * dollarsPerGallon;
+        System.out.printf(" %.2f\n", cost);
+
+    }
+
+}
