@@ -1,0 +1,73 @@
+/*Write a program with total change amount in pennies as an integer input, and output the change using the fewest coins,
+ one coin type per line. The coin types are Dollars, Quarters, Dimes, Nickels, and Pennies. Use singular and plural coin
+ names as appropriate, like 1 Penny vs. 2 Pennies.
+
+        Ex: If the input is:
+
+        0
+        the output is:
+
+        No change
+        Ex: If the input is:
+
+        45
+        the output is:
+
+        1 Quarter
+        2 Dimes
+        */
+import java.util.Scanner;
+
+public class LabProgram {
+    public static void main(String[] args) {
+        Scanner scnr = new Scanner(System.in);
+        int totalChange;
+
+        totalChange = scnr.nextInt();
+
+        if (totalChange == 0) {
+            System.out.println("No change");
+        }
+        else {
+            int dollars = Math.round((int)totalChange / 100);
+            totalChange = totalChange % 100;
+            int quarters = Math.round((int)totalChange / 25);
+            totalChange = totalChange % 25;
+            int dimes = Math.round((int)totalChange / 10);
+            totalChange = totalChange % 10;
+            int nickels = Math.round((int)totalChange / 5);
+            totalChange = totalChange % 5;
+            int pennies = Math.round((int)totalChange / 1);
+            if (dollars > 1) {
+                System.out.println(dollars + " Dollars");
+            }
+            else if (dollars == 1){
+                System.out.println(dollars + " Dollar");
+            }
+            if (quarters > 1) {
+                System.out.println(quarters + " Quarters");
+            }
+            else if (quarters == 1) {
+                System.out.println(quarters + " Quarter");
+            }
+            if (dimes > 1) {
+                System.out.println(dimes + " Dimes");
+            }
+            else if (dimes == 1) {
+                System.out.println(dimes + " Dime");
+            }
+            if (nickels > 1) {
+                System.out.println(nickels + " Nickels");
+            }
+            else if (nickels == 1) {
+                System.out.println(nickels + " Nickel");
+            }
+            if (pennies > 1) {
+                System.out.println(pennies + " Pennies");
+            }
+            else if (pennies == 1) {
+                System.out.println(pennies + " Penny");
+            }
+        }
+    }
+}
