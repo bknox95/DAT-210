@@ -1,0 +1,39 @@
+/*
+Write a program whose inputs are three integers, and whose output is the smallest of the three values.
+
+Ex: If the input is:
+
+7 15 3
+the output is:
+
+3
+*/
+
+import java.util.Scanner;
+
+public class LabProgram {
+    public static void main(String[] args) {
+        Scanner scnr = new Scanner(System.in);
+
+        int userInput1;
+        int userInput2;
+        int userInput3;
+
+        userInput1 = scnr.nextInt();
+        userInput2 = scnr.nextInt();
+        userInput3 = scnr.nextInt();
+
+        if ((userInput1 < userInput2) && (userInput1 < userInput3)) {
+            System.out.println(userInput1);
+        }
+        else if ((userInput2 < userInput1) && (userInput2 < userInput3)) {
+            System.out.println(userInput2);
+        }
+        else if ((userInput3 < userInput1) && (userInput3 < userInput2)) {
+            System.out.println(userInput3);
+        }
+        else {
+            System.out.println(userInput1);
+        }
+    }
+}
